@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{da7aedbe-ea22-49b5-adaf-a03379c40b73}</ProjectGuid>
+    <OutputPath>.</OutputPath>
+    <OutputType>Library</OutputType>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <UseVSHostingProcess>False</UseVSHostingProcess>
+    <NoStdLib>True</NoStdLib>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <DefineConstants>CODE_ANALYSIS_BASELINE;SMDIAGNOSTICS_FAILFAST;NONAPTCA;NOFXTRACE;TRACE;RETAIL;WIN32</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " >
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\clr\src\bcl\mscorlib.csproj">
+      <Project>{b2eee131-63ac-43b5-a843-e555ae346910}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WCF\SMDiagnostics\SMDiagnostics.csproj">
+      <Project>{988fa66b-59e1-4c98-bba5-2b0af548803f}</Project>
+      <Name>SMDiagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\System.csproj">
+      <Project>{511d1c68-d48e-465d-bae9-4448a54d9531}</Project>
+      <Name>System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Configuration\System.Configuration.csproj">
+      <Project>{be3abd4b-c69a-488f-8ddd-2b19956a2584}</Project>
+      <Name>System.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\System.ServiceModel.Internals\System.ServiceModel.Internals.csproj">
+      <Project>{8225b543-ccf1-47ed-95c0-120302b21cc6}</Project>
+      <Name>System.ServiceModel.Internals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Xml\System.Xml.csproj">
+      <Project>{653cd7dd-5b36-428d-8d35-c00dcd1e209e}</Project>
+      <Name>System.Xml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System\IO\Log\AppendHelper.cs" />
+    <Compile Include="System\IO\Log\CoTaskMemHandle.cs" />
+    <Compile Include="System\IO\Log\Error.cs" />
+    <Compile Include="System\IO\Log\FileLogRecord.cs" />
+    <Compile Include="System\IO\Log\FileLogRecordEnumerator.cs" />
+    <Compile Include="System\IO\Log\FileLogRecordHeader.cs" />
+    <Compile Include="System\IO\Log\FileLogRecordStream.cs" />
+    <Compile Include="System\IO\Log\FileRecordSequence.cs" />
+    <Compile Include="System\IO\Log\FileRecordSequenceCompletedAsyncResult.cs" />
+    <Compile Include="System\IO\Log\FileRecordSequenceHelper.cs" />
+    <Compile Include="System\IO\Log\FileRegion.cs" />
+    <Compile Include="System\IO\Log\FileReservationCollection.cs" />
+    <Compile Include="System\IO\Log\IRecordSequence.cs" />
+    <Compile Include="System\IO\Log\LogAppendAsyncResult.cs" />
+    <Compile Include="System\IO\Log\LogArchiveSnapshot.cs" />
+    <Compile Include="System\IO\Log\LogExtent.cs" />
+    <Compile Include="System\IO\Log\LogExtentCollection.cs" />
+    <Compile Include="System\IO\Log\LogExtentState.cs" />
+    <Compile Include="System\IO\Log\LogFlushAsyncResult.cs" />
+    <Compile Include="System\IO\Log\LogLogRecord.cs" />
+    <Compile Include="System\IO\Log\LogLogRecordEnumerator.cs" />
+    <Compile Include="System\IO\Log\LogLogRecordHeader.cs" />
+    <Compile Include="System\IO\Log\LogManagementAsyncResult.cs" />
+    <Compile Include="System\IO\Log\LogPolicy.cs" />
+    <Compile Include="System\IO\Log\LogRecord.cs" />
+    <Compile Include="System\IO\Log\LogRecordEnumeratorType.cs" />
+    <Compile Include="System\IO\Log\LogRecordSequence.cs" />
+    <Compile Include="System\IO\Log\LogReservationCollection.cs" />
+    <Compile Include="System\IO\Log\LogReserveAndAppendState.cs" />
+    <Compile Include="System\IO\Log\LogRestartAreaEnumerator.cs" />
+    <Compile Include="System\IO\Log\LogStore.cs" />
+    <Compile Include="System\IO\Log\LogWriteRestartAreaAsyncResult.cs" />
+    <Compile Include="System\IO\Log\LogWriteRestartAreaState.cs" />
+    <Compile Include="System\IO\Log\OverlappedAsyncResult.cs" />
+    <Compile Include="System\IO\Log\PolicyUnit.cs" />
+    <Compile Include="System\IO\Log\PolicyUnitType.cs" />
+    <Compile Include="System\IO\Log\RecordAppendOptions.cs" />
+    <Compile Include="System\IO\Log\ReservationCollection.cs" />
+    <Compile Include="System\IO\Log\ReservationNotFoundException.cs" />
+    <Compile Include="System\IO\Log\SafeArchiveContext.cs" />
+    <Compile Include="System\IO\Log\SafeMarshalContext.cs" />
+    <Compile Include="System\IO\Log\SafeReadContext.cs" />
+    <Compile Include="System\IO\Log\SequenceFullException.cs" />
+    <Compile Include="System\IO\Log\SequenceNumber.cs" />
+    <Compile Include="System\IO\Log\SimpleFileLog.cs" />
+    <Compile Include="System\IO\Log\SimpleFileLogInterop.cs" />
+    <Compile Include="System\IO\Log\SmuggledIUnknown.cs" />
+    <Compile Include="System\IO\Log\TailPinnedEventArgs.cs" />
+    <Compile Include="System\IO\Log\UnsafeNativeMethods.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{72ad5a9a-b053-4c5a-a54a-5ec93cc4db61}</ProjectGuid>
+    <OutputPath>.</OutputPath>
+    <OutputType>Library</OutputType>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <UseVSHostingProcess>False</UseVSHostingProcess>
+    <NoStdLib>True</NoStdLib>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <DefineConstants>CODE_ANALYSIS_BASELINE;NONAPTCA;TRACE;RETAIL;WIN32</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " >
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\clr\src\bcl\mscorlib.csproj">
+      <Project>{b2eee131-63ac-43b5-a843-e555ae346910}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\System.csproj">
+      <Project>{511d1c68-d48e-465d-bae9-4448a54d9531}</Project>
+      <Name>System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Configuration\System.Configuration.csproj">
+      <Project>{be3abd4b-c69a-488f-8ddd-2b19956a2584}</Project>
+      <Name>System.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Core\System.Core.csproj">
+      <Project>{caacfa4b-c342-483e-9cfe-6a553daed945}</Project>
+      <Name>System.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\data\System.Data.csproj">
+      <Project>{0a776382-2e17-48c6-9a71-4cd18671fbd6}</Project>
+      <Name>System.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WCF\IdentityModel\System.IdentityModel.csproj">
+      <Project>{f26e57a8-0402-4b05-9f3d-e35c36ccb09f}</Project>
+      <Name>System.IdentityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Runtime.DurableInstancing\System.Runtime.DurableInstancing.csproj">
+      <Project>{f89a9810-64d5-4b9a-854e-043de6a4862b}</Project>
+      <Name>System.Runtime.DurableInstancing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WCF\Serialization\System.Runtime.Serialization.csproj">
+      <Project>{3b8c3fe8-e3c7-448a-9685-900965489a00}</Project>
+      <Name>System.Runtime.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\clr\src\managedlibraries\security\System.Security.csproj">
+      <Project>{8eb6db73-d251-4cfa-b544-c30357e416ce}</Project>
+      <Name>System.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WCF\ServiceModel\System.ServiceModel.csproj">
+      <Project>{f25c7404-2e77-40b6-861e-99d3afc44f0a}</Project>
+      <Name>System.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\System.ServiceModel.Internals\System.ServiceModel.Internals.csproj">
+      <Project>{8225b543-ccf1-47ed-95c0-120302b21cc6}</Project>
+      <Name>System.ServiceModel.Internals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NetFx20\System.Transactions\System.Transactions.csproj">
+      <Project>{1b5d8cf9-fd56-47c7-94d5-3372951115c7}</Project>
+      <Name>System.Transactions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\Xml\System.Xml.csproj">
+      <Project>{653cd7dd-5b36-428d-8d35-c00dcd1e209e}</Project>
+      <Name>System.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\fx\src\XLinq\System.Xml.Linq.csproj">
+      <Project>{a01a23fd-abce-4b24-9042-c9f12b801a4b}</Project>
+      <Name>System.Xml.Linq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SuppressMessages.cs" />
+    <Compile Include="System\ServiceModel\Channels\SynchronousSendBindingElement.cs" />
+    <Compile Include="System\ServiceModel\Dispatcher\EndpointNameMessageFilter.cs" />
+    <Compile Include="System\ServiceModel\Dispatcher\StrictAndMessageFilter.cs" />
+    <Compile Include="System\ServiceModel\Routing\ClientFactory.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\ClientEndpointLoader.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\ConfigurationStrings.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\FilterType.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\RoutingExtensionElement.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\RoutingSection.cs" />
+    <Compile Include="System\ServiceModel\Routing\Configuration\SoapProcessingExtensionElement.cs" />
+    <Compile Include="System\ServiceModel\Routing\DelegatingHeader.cs" />
+    <Compile Include="System\ServiceModel\Routing\GenericTransactionFlowAttribute.cs" />
+    <Compile Include="System\ServiceModel\Routing\IDuplexRouterCallback.cs" />
+    <Compile Include="System\ServiceModel\Routing\IDuplexSessionRouter.cs" />
+    <Compile Include="System\ServiceModel\Routing\IRequestReplyRouter.cs" />
+    <Compile Include="System\ServiceModel\Routing\IRoutingClient.cs" />
+    <Compile Include="System\ServiceModel\Routing\ISimplexDatagramRouter.cs" />
+    <Compile Include="System\ServiceModel\Routing\ISimplexSessionRouter.cs" />
+    <Compile Include="System\ServiceModel\Routing\MessageRpc.cs" />
+    <Compile Include="System\ServiceModel\Routing\ProcessMessagesAsyncResult.cs" />
+    <Compile Include="System\ServiceModel\Routing\ProcessRequestAsyncResult.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingBehavior.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingChannelExtension.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingConfiguration.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingEndpointTrait.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingExtension.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingService.cs" />
+    <Compile Include="System\ServiceModel\Routing\RoutingUtilities.cs" />
+    <Compile Include="System\ServiceModel\Routing\SendOperation.cs" />
+    <Compile Include="System\ServiceModel\Routing\SessionChannels.cs" />
+    <Compile Include="System\ServiceModel\Routing\SoapProcessingBehavior.cs" />
+    <Compile Include="TD.Designer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
